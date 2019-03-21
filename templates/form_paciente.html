@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<style>
+{% block style %}
+
+body{
+  background-image: url("{% static "img/inicio_adn.jpg" %}") !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  transition: all 3s !important;
+  
+}
+
+.formulario{
+  
+  
+  width: 100% !important;
+  transition: all 2s !important;
+  margin-top: 20px !important;
+  background-color: rgb(0,0,0,.5) !important;
+  box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+  
+
+}
+
+.espaciado{
+  margin-top: 30px !important;
+}
+
+
+
+h2{
+  color: white !important;
+  text-align: center !important;
+  text-shadow: 0px 0px 40px yellow, 0px 0px 80px white !important;
+}
+
+label{
+  color: white !important;
+  
+}
+
+input, select{
+  transition: all 2s !important;
+  background-color: rgb(0,0,0,.5) !important;
+  color: white !important;
+  border-color: #006 !important;
+  border-bottom-color: #6c8096 !important;
+  border-bottom-style: groove !important;
+
+}
+
+
+
+{% endblock %}
+</style>
+
+
+
+ 
+{% block content %}
+<br>
+<br>
+
+<div class="container formulario">
+  <h2>REGISTRAR PACIENTE</h2>  
+  <form class="form-inline" method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+	 <!--<section class="main row">-->
+		    <div class="container form-group">
+          <label class="col-2 control label">Institución :</label> 
+          <div class="col-4">{{ form.institucion }}</div>
+        </div>
+        <div class="espaciado"></div>
+        <div class="row">
+    		        
+          <label class="col-2 control label">Nombre :</label>
+          <div class="col-4">{{ form.nombre }}</div>
+                
+  				<label class="col-2 control label">Apellidos :</label>
+          <div class="col-4">{{ form.apellidos }}</div> 
+                
+  				<label class="col-2 control label">Fecha de Nac. :</label>
+          <div class="col-4">{{ form.f_nac }}</div>
+
+
+  				<label class="col-2 control label">Sexo :</label>
+          <div class="col-4">{{ form.sexo }}</div>
+  				
+          <label class="col-2 control label">Domicilio :</label>
+          <div class="col-4">{{ form.domicilio }}</div>
+
+  				<label class="col-2 control label">Teléfono :</label>
+          <div class="col-4">{{ form.tel }}</div>
+
+  				<label class="col-2 control label">C.I. :</label>
+          <div class="col-4">{{ form.ci }}</div>
+
+  				<label class="col-2 control label">Ocupación :</label>
+          <div class="col-4">{{ form.ocupacion }}</div>
+
+  				<label class="col-2 control label">Estado Civil :</label>
+          <div class="col-4">{{ form.ec }}</div>
+
+  				<label class="col-2 control label">Seguro :</label>
+          <div class="col-4">{{ form.seguro }}</div>
+
+  				<label class="col-2 control label">Procedencia :</label>
+          <div class="col-4">{{ form.procedencia }}</div>
+
+  				<label class="col-2 control label">Enfermedad :</label>
+          <div class="col-4">{{ form.enfermedad }}</div>
+  				
+          <label class="col-2 control label">Interconsulta :</label>
+          <div class="col-4">{{ form.interconsulta }}</div>
+  				
+          <label class="col-2 control label">Síntomas :</label>
+          <div class="col-4">{{ form.sintomas }}</div>
+  
+					<label class="col-2 control label">Signos :</label>
+          <div class="col-4">{{ form.signos }}</div>
+  				
+          <label class="col-2 control label">Síndromes :</label>
+          <div class="col-4">{{ form.sindromes }}</div>
+  				
+          <label class="col-2 control label">Ant.Personales :</label>
+          <div class="col-4">{{ form.a_personales }}</div>
+  				
+          <label class="col-2 control label">Ant.Patológicos :</label>
+          <div class="col-4">{{ form.a_patologicos }}</div>
+
+  				<label class="col-2 control label">Ant.NoPatológicos:</label>
+          <div class="col-4">{{ form.a_nopatologicos }}</div>
+  				
+          <label class="col-2 control label">Ant.Hereditarios :</label>
+          <div class="col-4">{{ form.a_hereditarios }}</div>
+
+  				<label class="col-2 control label">Diag.Presuntivo :</label>
+          <div class="col-4">{{ form.a_presuntivo }}</div>
+  				
+          <label class="col-2 control label">Diag.Definitivo :</label>
+          <div class="col-4">{{ form.d_definitivo }}</div>
+
+          <label class="col-2 control label">Imagen :</label>
+          <div class="col-4">{{ form.imagen }}</div>
+  			</div>
+  		
+  		
+  		<!--<div class="foto_img">Hola</div>-->
+	
+			
+	<!--</section>-->
+  <div class="form-group">
+          <button type="submit" class="btn btn-danger">Registrar</button>
+  </div>
+  <!--<input type="submit" value='Registrame' />-->
+  
+</form>
+<br>
+
+
+
+</div>
+
+
+
+{% endblock %}

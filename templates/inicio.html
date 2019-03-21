@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<style>
+{% block style %}
+
+body{
+	background-image: url("{% static "img/inicio_molecula.jpg" %}") !important;
+	background-attachment: fixed !important;
+	background-position: center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	transition: all 3s !important;
+	
+}
+
+.formulario{
+	
+	
+	width: 30% !important;
+	transition: all 2s !important;
+	margin-top: 100px !important;
+	background-color: rgb(0,0,0,.5) !important;
+	box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+}
+
+.espaciado{
+	margin-top: 30px;
+}
+
+.logo{
+	height: 65px !important;
+	margin-top: 30px !important;
+	border-radius: 10px !important;
+	transition: all 2s !important;
+	box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+}
+
+fieldset{
+	transition: all 2s !important;
+	margin-bottom: 50px !important;
+	border-color: rgba(213,0,0,1) !important;
+	border-style: groove !important;
+	border-width: 5px !important;
+	border-radius: 20px !important;
+
+}
+
+
+h5{
+	text-align: center !important;
+	color: white !important;
+}
+
+h1{
+	color: white !important;
+	text-shadow: 0px 0px 40px yellow, 0px 0px 80px white !important;
+}
+
+
+input{
+	transition: all 2s !important;
+	background-color: rgb(0,0,0,.5) !important;
+	color: white !important;
+	border-color: #006 !important;
+	border-bottom-color: white !important;
+	border-bottom-style: groove !important;
+
+
+
+}
+
+{% endblock %}
+</style>
+
+
+{% block navbar %}
+{% endblock %}
+
+
+{% block content %}
+<!--<main role="main" class="container formulario">-->
+
+<!--<div class="row">
+
+	<div class="col">
+		
+		<div class="jumbotron">
+			<div class="formulario">
+				<h5>Bienvenidos</h5>
+  			</div>
+
+        	
+        	<h1>Hola</h1>
+        	<p class="lead">Historia Clinica una solucion para
+        		mejorar tu vida.</p>
+        	<a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Presione aquí &raquo;</a>
+        
+		</div>
+
+	</div>
+</div>-->
+
+<div class="container formulario">
+	<div class="row justify-content-md-center align-items-end">
+		<div class="col">
+			<img src='{% static "img/icono_hc1.png" %}' class="logo">
+		</div>
+		<div class="col"><h1>Histoclin</h1></div>
+	</div>
+
+	
+	<div class="espaciado"></div>
+	
+	<div class="row">
+		<fieldset class="col-10 container">
+			<legend class="hidden-xs">
+				<h5>Inicio de sesión</h5>
+			</legend>
+			<form class="form-horizontal" method="POST" autocomplete="off">{% csrf_token %}
+				<div class="form-group">
+					<label class="col-xs-12"><h5>Usuario</h5></label>
+					<div class="col-xs-10 col-offset-1">
+						<input type="text" name="username" class="form-control">	
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-xs-12"><h5>Contraseña</h5></label>
+					<div class="col-xs-10 col-offset-1">
+						<input type="text" name="password" class="form-control">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-danger btn-block">Aceptar</button>
+				</div>
+				
+			</form>
+
+		</fieldset>
+	</div>
+</div>
+
+<!--</main>-->
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+</br>
+</br>
+<div>
+  <form class="" action="" method="post" enctype="multipart/form-data">
+  	{% csrf_token %}
+    {{ formset.management_form }}
+
+    {% for form in formset %}
+		<section>
+			<label>Fecha :</label>{{ form.fecha }} 
+            <label>Estatura :</label>{{ form.estatura }} 
+            <label>Peso :</label>{{ form.peso }}
+            <label>Edad :</label>{{ form.edad }}
+            <label>Pa :</label>{{ form.pa }} 
+            <label>Fc :</label>{{ form.fc }}
+            <label>Fr :</label>{{ form.fr }}
+            <label>T_oral :</label>{{ form.t_oral }}
+            <label>T_rectal :</label>{{ form.t_rectal }}
+            <label>Tratamiento :</label>{{ form.tratamiento }}
+            <label>Paciente :</label>{{ form.pacientes }}
+            
+            <a class="btn btn-danger" href="">Edit</a>
+            <input class="btn btn-danger" type="submit" value="Delete"/>
+			<input class="btn btn-danger" type="submit" value="IMC"/>
+			<input class="btn btn-danger" type="submit" value="Cineantropometría"/>
+			<br><br>
+
+            {%  if  formset.can_delete  %} 
+                <li> Borrar {{  form.DELETE  }} </li>
+            {%  endif  %} 
+        </section>
+     
+    {% endfor %}
+    <input type="submit" value="Submit Questions" />
+  </form>
+</div>
+{% endblock %}
+
+ 
+
+  

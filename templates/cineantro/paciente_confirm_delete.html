@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+<style>
+{% block style %}
+
+body{
+  background-image: url("{% static "img/inicio_adn.jpg" %}") !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  transition: all 3s !important;
+  
+}
+
+.formulario{
+  
+  width: 80% !important;
+  transition: all 2s !important;
+  margin-top: 20px !important;
+  background-color: rgb(0,0,0,.5) !important;
+  box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+
+  
+}
+.foto{
+	width: 90% !important;
+	height: 150px !important;
+	margin-top: 30px !important;
+	border-radius: 10px !important;
+	transition: all 2s !important;
+	box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+	
+}
+
+
+h3{
+  color: white !important;
+  text-align: center !important;
+  
+}
+
+label{
+  color: white !important;
+  
+}
+
+
+
+{% endblock %}
+</style>
+
+
+{% block content %}
+</br>
+</br>
+</br>
+
+<div class="container formulario">
+	</br>
+	<h3>¿Seguro para Borrar?</h3>
+	</br>
+	<h3>!!!!!!!{{ object.nombre }} {{ object.apellidos }}!!!!!!</h3>
+	</br>
+	</br>
+
+	<form action="" method="post">{% csrf_token %}
+    	<div class="row justify-content-md-center">
+    		<input class="btn btn-danger" type="submit" value="Confirmar" />
+    	</div>
+		</br>    
+	</form>
+</div>
+
+{% endblock %}

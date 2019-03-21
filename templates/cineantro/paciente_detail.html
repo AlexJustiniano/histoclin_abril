@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+<style>
+{% block style %}
+
+body{
+  background-image: url("{% static "img/inicio_adn.jpg" %}") !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  transition: all 3s !important;
+  
+}
+
+.formulario{
+  
+  width: 80% !important;
+  transition: all 2s !important;
+  margin-top: 20px !important;
+  background-color: rgb(0,0,0,.5) !important;
+  box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+
+  
+}
+.foto{
+	width: 90% !important;
+	height: 150px !important;
+	margin-top: 30px !important;
+	border-radius: 10px !important;
+	transition: all 2s !important;
+	box-shadow: 0px 0px 40px red, 0px 0px 80px white !important;
+	
+}
+
+
+h3{
+  color: white !important;
+  text-align: center !important;
+  
+}
+
+label{
+  color: white !important;
+  
+}
+
+
+
+{% endblock %}
+</style>
+
+
+
+{% block content %}
+
+
+</br>
+</br>
+</br>
+
+	<form class="form-inline" method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+		<div class="container formulario">
+		</br>
+		<h3>Institución :{{ object.institucion }}</h3>
+		<h3>Nombre : {{ object.nombre }}</h3>
+		<h3>Apellidos : {{ object.apellidos }}</h3>
+		<h3>Fecha de Nac. :{{ object.f_nac }}</h3>
+
+
+<!-- Ejemplo de mensaje-->
+
+		<div class="row justify-content-md-center">
+			<div class="col-md-4 col-md-offset-4">
+				<img src='{{ object.imagen.url }}' class='foto img-responsive'/>
+			</div>
+		</div>
+		</br>
+		<div class="row justify-content-md-center">
+			<p>
+          	<a class="btn btn-danger" href="update" role="button">Actualizar</a>
+          <!--<button type="submit" class="btn btn-danger btn-lg btn-block">Actualizar</button>
+          	<button type="submit" class="btn btn-danger btn-lg btn-block">Borrar</button>-->
+          	<a class="btn btn-danger" href="delete" role="button">Borrar</a>
+          	<a class="btn btn-danger" href="" role="button">Exámen Físico</a>
+        	</p>
+  		</div>
+	<br>
+	</div>
+	</form>
+
+
+
+
+
+{% endblock %}

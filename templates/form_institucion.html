@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="page-header">
+			<h1>Registrar institución</h1>
+		</div>
+	<form method="POST" action="">{% csrf_token %}
+		{{ el_form|crispy }}
+
+	<input type='submit' value='Registrame' />
+	</form>
+	</div>
+	<div class="col-md-4">
+		<div class="page-header">
+			<h1>Sidebar</h1>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
